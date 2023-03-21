@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  cache_redis:
+    image: redis
+    ports:
+      - "6379:6379"
+
+  app_database:
+    image: postgres
+    container_name: contactapp-postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+    ports:
+      - "5432:5432"

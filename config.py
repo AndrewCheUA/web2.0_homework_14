@@ -1,5 +1,9 @@
 from pydantic import BaseSettings
 
+from pathlib import Path
+
+BASE_DIR = Path(__file__).parent
+
 
 class Settings(BaseSettings):
     sqlalchemy_database_url: str
